@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style/style.css">
+    <link rel="shortcut icon" href="/img/15464.png">
+    <title>CÂMBIO APP</title>
+</head>
+
+<body data-theme="t-dark">
+    <nav>
+        <section class="navBar">
+            <a href="index.html">Home</a>
+            <a href="#">Sobre</a>
+        </section>
+        <a class="title" href="index.html">CÂMBIO APP</a>
+
+        <!-- box search -->
+        <div class="search-box">
+            <input type="text" id="input-search" class="input-search" placeholder="Pesquisar.....Ex: USD, EUR, CAD"
+                value="">
+            <a type="button" class="search-btn">
+                <button type="button" id="img1" class="loupe-blue" onclick="modal()"></button>
+                <button type="button" id="img2" class="loupe-white" onclick="modal()"></button>
+            </a>
+        </div>
+        <button type="button" id="index-search" class="btn-theme" title="Mudar tema"></button>
+    </nav>
+
+    <div id="searchBox" class="searchBox">
+        <div id="modalSearch" class="modalSearch">
+            <div class="button">
+                <button type="button" id="exit" class="exitButton" onclick="exitModal()"></button>
+            </div>
+
+            <div class="titleCoin">
+                <span id="span-coinSearch"></span>
+                <h3 id="descriptionCoin">Dados</h3>
+            </div>
+            <div class="container-coin">
+                <div class="box-dados">
+                    <div class="boxCoinDados">
+                        <div class="dados">
+                            <div class="box-intern">
+                                <h4 id="name-item1" class="names">Codigo</h4>
+                                <div class="span-style">
+                                    <span id="code"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="dados">
+                            <div class="box-intern">
+                                <h4 id="name-item2" class="names">Compra</h4>
+                                <div class="span-style">
+                                    <span id="compra"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="dados">
+                            <div class="box-intern">
+                                <h4 id="name-item3" class="names">Venda</h4>
+                                <div class="span-style">
+                                    <span id="venda"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="dados">
+                            <div class="box-intern">
+                                <h4 id="name-item4" class="names">Variação</h4>
+                                <div class="span-style">
+                                    <span id="variacao"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="dados">
+                            <div class="box-intern">
+                                <h4 id="name-item5" class="names">% de Variação</h4>
+                                <div class="span-style">
+                                    <span id="porcentagemVariacao"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="dados">
+                            <div class="box-intern">
+                                <h4 id="name-item6" class="names">Máxima</h4>
+                                <div class="span-style">
+                                    <span id="high"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="dados">
+                            <div class="box-intern">
+                                <h4 id="name-item8" class="names">Mínima</h4>
+                                <div class="span-style">
+                                    <span id="low"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="main" class="main">
+        <!-- Divs do cambio COIN/BRL -->
+        <div class="container-Cotacoes">
+
+            <div class="small-extern-box">
+                <div class="small-box">
+                    <div class="cardBov">
+                        <span id="span-Name1" class="span-CardBov"> </span>
+                    </div>
+
+                    <div class="cardBovPorcentagem">
+                        <div class="color-value" id="color-valueUSD">
+                            <span id="span-Value" class="span-PorcentagemAcao"> </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="box-Coin">
+                    <div class="dados-Coin">
+                        <!-- Dados das moedas -->
+                        <span id="span-Moeda1" class="span-NomeCoin"> </span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="small-extern-box">
+                <div class="small-box">
+                    <div class="cardBov">
+                        <span id="span-Name2" class="span-CardBov"> </span>
+                    </div>
+
+                    <div id="cardPorcentagem" class="cardBovPorcentagem">
+                        <div class="color-value" id="color-valueEUR">
+                            <span id="span-Value2" class="span-PorcentagemAcao"> </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="box-Coin">
+                    <div class="dados-Coin">
+                        <!-- Dados das moedas -->
+                        <span id="span-Moeda2" class="span-NomeCoin"> </span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="small-extern-box">
+                <div class="small-box">
+                    <div class="cardBov">
+                        <span id="span-Name3" class="span-CardBov"> </span>
+                    </div>
+
+                    <div id="cardPorcentagem" class="cardBovPorcentagem">
+                        <div class="color-value" id="color-valueCAD">
+                            <span id="span-Value3" class="span-PorcentagemAcao"> </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="box-Coin">
+                    <div class="dados-Coin">
+                        <!-- Dados das moedas -->
+                        <span id="span-Moeda3" class="span-NomeCoin"> </span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="small-extern-box">
+                <div class="small-box">
+                    <div class="cardBov">
+                        <span id="span-Name4" class="span-CardBov"> </span>
+                    </div>
+
+                    <div id="cardPorcentagem" class="cardBovPorcentagem">
+                        <div class="color-value" id="color-valueARS">
+                            <span id="span-Value4" class="span-PorcentagemAcao"> </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="box-Coin">
+                    <div class="dados-Coin">
+                        <!-- Dados das moedas -->
+                        <span id="span-Moeda4" class="span-NomeCoin"> </span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="small-extern-box">
+                <div class="small-box">
+                    <div class="cardBov">
+                        <span id="span-Name5" class="span-CardBov"> </span>
+                    </div>
+
+                    <div id="cardPorcentagem" class="cardBovPorcentagem">
+                        <div class="color-value" id="color-valueCLP">
+                            <span id="span-Value5" class="span-PorcentagemAcao"> </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="box-Coin">
+                    <div class="dados-Coin">
+                        <!-- Dados das moedas -->
+                        <span id="span-Moeda5" class="span-NomeCoin"> </span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="small-extern-box">
+                <div class="small-box">
+                    <div class="cardBov">
+                        <span id="span-Name6" class="span-CardBov"> </span>
+                    </div>
+
+                    <div id="cardPorcentagem" class="cardBovPorcentagem">
+                        <div class="color-value" id="color-valueCNY">
+                            <span id="span-Value6" class="span-PorcentagemAcao"> </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="box-Coin">
+                    <div class="dados-Coin">
+                        <!-- Dados das moedas -->
+                        <span id="span-Moeda6" class="span-NomeCoin"> </span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="small-extern-box">
+                <div class="small-box">
+                    <div class="cardBov">
+                        <span id="span-Name7" class="span-CardBov"> </span>
+                    </div>
+
+                    <div id="cardPorcentagem" class="cardBovPorcentagem">
+                        <div class="color-value" id="color-valueGBP">
+                            <span id="span-Value7" class="span-PorcentagemAcao"> </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="box-Coin">
+                    <div class="dados-Coin">
+                        <!-- Dados das moedas -->
+                        <span id="span-Moeda7" class="span-NomeCoin"> </span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="small-extern-box">
+                <div class="small-box">
+                    <div class="cardBov">
+                        <span id="span-Name8" class="span-CardBov"> </span>
+                    </div>
+
+                    <div id="cardPorcentagem" class="cardBovPorcentagem">
+                        <div class="color-value" id="color-valueJPY">
+                            <span id="span-Value8" class="span-PorcentagemAcao"> </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="box-Coin">
+                    <div class="dados-Coin">
+                        <!-- Dados das moedas -->
+                        <span id="span-Moeda8" class="span-NomeCoin"> </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Divs melhores cotações do dia -->
+        <div class="box-Acoes-Destaque">
+            <div class="title-Cotacoes">
+                <span class="span-Title-box">Máximas do dia</span>
+            </div>
+            <div class="extern-Card-Cotacoes">
+                <section class="melhores-Do-Dia">
+                    <div class="intern-Card-Cotacoes">
+                        <span id="nameAlta1" class="span-Card-Cotacoes"> </span>
+                        <span id="coinAlta1" class="span-Card-Porcentagem"> </span>
+                    </div>
+                    <div class="intern-Card-Cotacoes">
+                        <span id="nameAlta2" class="span-Card-Cotacoes"> </span>
+                        <span id="coinAlta2" class="span-Card-Porcentagem"> </span>
+                    </div>
+                    <div class="intern-Card-Cotacoes">
+                        <span id="nameAlta3" class="span-Card-Cotacoes"> </span>
+                        <span id="coinAlta3" class="span-Card-Porcentagem"> </span>
+                    </div>
+                    <div class="intern-Card-Cotacoes">
+                        <span id="nameAlta4" class="span-Card-Cotacoes"> </span>
+                        <span id="coinAlta4" class="span-Card-Porcentagem"> </span>
+                    </div>
+                </section>
+
+                <section class="melhores-Do-Dia">
+                    <div class="intern-Card-Cotacoes">
+                        <span id="nameAlta5" class="span-Card-Cotacoes"> </span>
+                        <span id="coinAlta5" class="span-Card-Porcentagem"> </span>
+                    </div>
+                    <div class="intern-Card-Cotacoes">
+                        <span id="nameAlta6" class="span-Card-Cotacoes"> </span>
+                        <span id="coinAlta6" class="span-Card-Porcentagem"> </span>
+                    </div>
+                    <div class="intern-Card-Cotacoes">
+                        <span id="nameAlta7" class="span-Card-Cotacoes"> </span>
+                        <span id="coinAlta7" class="span-Card-Porcentagem"> </span>
+                    </div>
+                    <div class="intern-Card-Cotacoes">
+                        <span id="nameAlta8" class="span-Card-Cotacoes"> </span>
+                        <span id="coinAlta8" class="span-Card-Porcentagem"> </span>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+        <div class="box-Acoes-Destaque-Negativos">
+            <div class="title-Cotacoes">
+                <span class="span-Title-box">Mínimas do dia</span>
+            </div>
+            <div class="extern-Card-Cotacoes">
+                <section class="piores-Do-Dia">
+                    <div class="intern-Card-Cotacoes">
+                        <span id="nameBaixa1" class="span-Card-Cotacoes"> </span>
+                        <span id="coinBaixa1" class="span-Card-Porcentagem-Dois"> </span>
+                    </div>
+                    <div class="intern-Card-Cotacoes">
+                        <span id="nameBaixa2" class="span-Card-Cotacoes"> </span>
+                        <span id="coinBaixa2" class="span-Card-Porcentagem-Dois"> </span>
+                    </div>
+                    <div class="intern-Card-Cotacoes">
+                        <span id="nameBaixa3" class="span-Card-Cotacoes"> </span>
+                        <span id="coinBaixa3" class="span-Card-Porcentagem-Dois"> </span>
+                    </div>
+                    <div class="intern-Card-Cotacoes">
+                        <span id="nameBaixa4" class="span-Card-Cotacoes"> </span>
+                        <span id="coinBaixa4" class="span-Card-Porcentagem-Dois"> </span>
+                    </div>
+                </section>
+
+                <section class="piores-Do-Dia">
+                    <div class="intern-Card-Cotacoes">
+                        <span id="nameBaixa5" class="span-Card-Cotacoes"> </span>
+                        <span id="coinBaixa5" class="span-Card-Porcentagem-Dois"> </span>
+                    </div>
+                    <div class="intern-Card-Cotacoes">
+                        <span id="nameBaixa6" class="span-Card-Cotacoes"> </span>
+                        <span id="coinBaixa6" class="span-Card-Porcentagem-Dois"> </span>
+                    </div>
+                    <div class="intern-Card-Cotacoes">
+                        <span id="nameBaixa7" class="span-Card-Cotacoes"> </span>
+                        <span id="coinBaixa7" class="span-Card-Porcentagem-Dois"> </span>
+                    </div>
+                    <div class="intern-Card-Cotacoes">
+                        <span id="nameBaixa8" class="span-Card-Cotacoes"> </span>
+                        <span id="coinBaixa8" class="span-Card-Porcentagem-Dois"> </span>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footerApp">
+        <a class="title-Footer" href="index.html">CÂMBIO APP</a>
+        <p class="footerDireitos">©2022 Copyright: Alvaro Luiz</p>
+    </footer>
+
+    <script src="config/config.js"></script>
+    <script src="config/api-Cambio.js"></script>
+</body>
+
+</html>
