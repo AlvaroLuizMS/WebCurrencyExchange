@@ -1,3 +1,5 @@
+let statusModal = document.querySelector('[scream]').style.display = 'none'
+
 //Função para mudar o tema da pagina de pela preferência do usuario.
 function mudarTema() {
 
@@ -64,14 +66,13 @@ function searchCoin() {
 }
 
 function modal() {
-    document.getElementById('modalSearch').style.display = 'block'
-    document.getElementById('searchBox').style.position = 'relative'
-    document.querySelector('.main').style.display = 'none'
+    statusModal = document.querySelector('[scream]').style.display = 'flex'
+    document.querySelector('.modalSearch').style.display = 'block'
 }
 
 function exitModal() {
-    document.getElementById('modalSearch').style.display = 'none'
-    document.querySelector('.main').style.display = 'grid'
+    statusModal = document.querySelector('[scream]').style.display = 'none'
+    document.querySelector('.modalSearch').style.display = 'none'
 }
 mudarTema()
 searchCoin()

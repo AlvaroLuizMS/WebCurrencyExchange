@@ -1,0 +1,347 @@
+@media screen and (max-width:920px) {
+
+    body {
+        overflow: auto;
+    }
+
+    /*Variaveis para definir tema light*/
+    body[data-theme="t-light"] {
+        --color-nav-txt: #fff;
+        --color-span-NomeCoin: #fff;
+        --colorbckButton: rgb(87, 87, 87);
+        --color-nav-Dark: rgb(87, 87, 87);
+        --color-cardBov: rgb(104, 104, 104);
+        --color-cardCotacoes: rgb(87, 87, 87);
+        --img-buttonbck: url(/img/lua-theme.png);
+        --color-dadosCoin-bck: rgb(78, 77, 74);
+        --color-border-exern: #6b6b6b36;
+        --color-box-shadow: rgba(8, 8, 8, 0.658);
+        --color-body-bck: rgba(110, 110, 110, 0.671);
+        --img-search: url(../img/lupa-de-pesquisa.png);
+        --color-footerDireitos: rgba(185, 185, 185, 0.911);
+        --color-exernBox-bck: rgba(104, 104, 104, 0.705);
+        --color-txt-coinSearch: #1f212c;
+    }
+
+    /*Variaveis para definir tema dark*/
+    body[data-theme="t-dark"] {
+        --color-nav-txt: #fff;
+        --color-span-NomeCoin: #fff;
+        --color-cardBov: rgb(12, 12, 12);
+        --color-nav-Dark: #23242f;
+        --color-body-bck: rgb(82, 82, 82);
+        --colorbckButton: #1f212c;
+        --color-cardCotacoes: rgb(32, 32, 32);
+        --color-exernBox-bck: #23242f;
+        --color-dadosCoin-bck: rgb(82, 82, 82);
+        --img-buttonbck: url(/img/sol-theme.png);
+        --img-search: url(../img/lupa-de-pesquisa.png);
+        --color-box-shadow: #1a1a1aa6;
+        --color-border-exern: #1f212c7a;
+        --color-footerDireitos: rgba(255, 255, 255, 0.315);
+        --color-txt-coinSearch: #1f212c;
+    }
+
+    #searchBox {
+        padding-top: 80px;
+    }
+
+    div.main {
+        gap: 4vh 0;
+        width: 100vw;
+        height: auto;
+        display: grid;
+        min-width: 920px;
+        padding: 15vh 0 0 0;
+        grid-template-rows: 112px 230px;
+        grid-template-columns: 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5%;
+    }
+
+    nav {
+        z-index: 1;
+        width: 100%;
+        height: 65px;
+        display: flex;
+        position: absolute;
+        background-color: var(--color-nav-Dark);
+        box-shadow: 0px 2px 2px var(--color-box-shadow);
+    }
+
+    section.navBar {
+        display: flex;
+    }
+
+    a.title {
+        padding: 0;
+        font-size: 30px;
+        margin-left: auto;
+        margin-right: auto;
+        font-family: Andale Mono, monospace;
+    }
+
+    nav a {
+        float: left;
+        list-style: none;
+        font-size: 20px;
+        font-weight: bold;
+        margin-left: 20px;
+        text-decoration: none;
+        color: var(--color-nav-txt);
+        margin: auto 20px auto 40px;
+    }
+
+    button.btn-theme {
+        width: 40px;
+        height: 40px;
+        border: none;
+        margin-top: 13px;
+        margin-right: 20px;
+        border-radius: 100px;
+        background-size: 40px 40px;
+        background-color: var(--colorbckButton);
+        background-image: var(--img-buttonbck);
+    }
+
+    div.container-Cotacoes {
+        z-index: -1;
+        height: auto;
+        display: flex;
+        position: absolute;
+    }
+
+    div.small-extern-box {
+        width: 104px;
+        height: 110px;
+        margin: 0px 4.3px;
+        border-radius: 10px;
+        background: var(--color-exernBox-bck);
+        border: 1px solid var(--color-border-exern);
+        box-shadow: 3px 4px 6px 1px var(--color-box-shadow);
+    }
+
+    span.span-NomeCoin {
+        font-size: 13px;
+        word-wrap: break-word;
+        color: var(--color-span-NomeCoin);
+    }
+
+    div.dados-Coin {
+        width: 90%;
+        height: 69px;
+        font-weight: 900;
+        border-radius: 10px;
+        margin: 10px auto 0 auto;
+        background-color: var(--color-dadosCoin-bck);
+    }
+
+    div.cardBov {
+        width: 30%;
+        margin-top: 6px;
+        font-weight: bold;
+        border-radius: 5px;
+        color: var(--color-cardBov);
+        background-color: var(--color-span-NomeCoin);
+    }
+
+    div.small-box {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 25px;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+    span.span-CardBov {
+        margin: 0;
+        font-size: 15px;
+    }
+
+    div.cardBovPorcentagem {
+        width: 50%;
+        margin-top: 6px;
+        text-align: center;
+    }
+
+    div.color-value {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        border-radius: 5px;
+        align-items: center;
+        justify-content: center;
+    }
+
+    span.span-PorcentagemAcao {
+        font-size: 14.8px;
+        font-weight: bold;
+    }
+
+    div.box-Acoes-Destaque {
+        grid-row-start: 2;
+        grid-column-end: 4;
+        grid-column-start: 1;
+    }
+
+    div.box-Acoes-Destaque-Negativos {
+        grid-row-start: 2;
+        grid-column-end: 7;
+        grid-column-start: 5;
+    }
+
+    div.box-Acoes-Destaque,
+    div.box-Acoes-Destaque-Negativos {
+        width: 450px;
+        height: auto;
+        margin: 0 0 0 2px;
+        border-radius: 10px;
+        background: var(--color-exernBox-bck);
+        border: 1px solid var(--color-border-exern);
+        box-shadow: 1px 3px 8px 1px var(--color-box-shadow);
+    }
+
+    div.title-Cotacoes {
+        width: 100%;
+        color: var(--color-nav-txt);
+        font-size: 25px;
+        padding-top: 5px;
+        font-weight: bold;
+        text-align: center;
+        padding-left: 10px;
+        padding-bottom: 8px;
+    }
+
+    .search-box:hover>.input-search {
+        width: 200px;
+        padding-left: 20px;
+    }
+
+    /* MODAL INICIO */
+
+    div.searchBox {
+        width: 100vw;
+        height: 95vh;
+        display: flex;
+        position: absolute;
+        align-items: center;
+        justify-content: center;
+        backdrop-filter: blur(3px);
+        -webkit-backdrop-filter: blur(3px);
+    }
+
+    div.modalSearch {
+        z-index: 1;
+        width: 400px;
+        height: 400px;
+        text-align: center;
+        border-radius: 10px;
+        background-color: var(--color-exernBox-bck);
+        box-shadow: 2px 2px 8px 1px var(--color-box-shadow);
+    }
+
+    div.button {
+        width: 100%;
+        height: auto;
+        display: flex;
+        justify-content: end;
+    }
+
+    button.exitButton {
+        width: 35px;
+        height: 35px;
+        border: none;
+        margin: 5px 5px;
+        background-size: 35px 35px;
+        background-color: transparent;
+        background-image: url(/img/button-exit.png);
+    }
+
+    div.titleCoin {
+        width: 100%;
+        height: auto;
+    }
+
+    div.container-coin {
+        width: 100%;
+        height: auto;
+    }
+
+    div.box-dados {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    #descriptionCoin {
+        color: #fff;
+        font-weight: bold;
+    }
+
+    div.boxCoinDados {
+        margin: 0;
+        width: 90%;
+        font-weight: bold;
+        border-radius: 3px;
+        color: var(--color-txt-coinSearch);
+        background-color: var(--color-dadosCoin-bck);
+    }
+
+    div.box-intern {
+        width: 200px;
+        height: 36px;
+        display: flex;
+        align-items: center;
+        margin: 0 auto 0 auto;
+        justify-content: space-between;
+    }
+
+    span#span-coinSearch {
+        color: #fff;
+        font-size: 19px;
+        font-weight: bold;
+    }
+
+    h4.names {
+        width: 200px;
+        font-size: 1rem;
+        color: var(--color-nav-txt);
+    }
+
+    div.span-style {
+        width: 90px;
+        height: auto;
+        font-size: 15px;
+        border-radius: 2px;
+        background-color: #fff;
+        box-shadow: 1px 2px 3px var(--color-box-shadow);
+    }
+
+    /* MODAL FIM */
+
+    /* Footer */
+
+    footer.footerApp {
+        bottom: 0;
+        width: 100vw;
+        height: 70px;
+        position: fixed;
+        min-width: 920px;
+        padding-top: 16px;
+        text-align: center;
+        background-color: var(--color-nav-Dark);
+    }
+
+    a.title-Footer {
+        font-size: 33px;
+        font-weight: bold;
+        text-decoration: none;
+        color: var(--color-nav-txt);
+    }
+
+    p.footerDireitos {
+        font-size: 13px;
+        color: var(--color-footerDireitos);
+    }
+}
