@@ -346,6 +346,7 @@ span.span-Card-Porcentagem-Dois {
 /* MODAL INICIO */
 
 div.searchBox {
+    z-index: 2;
     width: 100vw;
     height: 95vh;
     display: flex;
