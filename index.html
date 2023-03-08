@@ -8,29 +8,63 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="style/style.css">
     <link rel="stylesheet" href="style/mobile/mobile-css.css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="shortcut icon" href="../img/favicon-coin-quot.jpg">
     <title>Coin quote</title>
 </head>
 
-<body data-theme="t-dark">
+<body data-theme=" ">
     <nav>
+        <button class="menu-toggle" onclick="showMenuToggle('.menu-toggle')">
+            <i class="fa fa-lg fa-bars"></i>
+        </button>
+
         <section class="navBar">
             <a href="index.html">Home</a>
             <a href="#">Sobre</a>
         </section>
-        <a class="title" href="index.html">Coin quote</a>
+
+        <a class="title" href="index.html">
+            Coin quote
+        </a>
 
         <!-- box search -->
         <div class="search-box">
             <input type="text" id="input-search" class="input-search" placeholder="Pesquisar.....Ex: USD, EUR, CAD"
                 value="">
             <a type="button" class="search-btn">
-                <button type="button" id="img1" class="loupe-blue" onclick="modal()"></button>
-                <button type="button" id="img2" class="loupe-white" onclick="modal()"></button>
+                <button type="button" id="img1" class="loupe-blue" onclick="searchCoin('input-search')"></button>
+                <button type="button" id="img2" class="loupe-white"></button>
             </a>
         </div>
+
         <button type="button" id="index-search" class="btn-theme" title="Mudar tema"></button>
+
+        <input title="input" type="text" class="input-hide" value="0" hidden>
+
+        <input type="text" name="search-mobile" id="input-search-mobile" placeholder="USD">
+
+        <button type="button" class="btn-search-mobile" title="search-mobile"
+            onclick="showInputSearch('input-search-mobile')"></button>
     </nav>
+
+    <aside class="menu-mobile">
+        <div class="intern-box-aside">
+            <ul class="ul-menu-mobile">
+                <li>
+                    <a href="index.html">Home</a>
+                </li>
+                <li>
+                    <a href="index.html">Sobre</a>
+                </li>
+                <li class="charge-theme">
+                    <img src="../img/lua-theme.png" alt="moon-theme-dark" width="20" height="20">
+                    <input title="charge-theme" class="range-change-theme" type="range" max="1" min="0" value="0">
+                    <img src="../img/sol-theme.png" alt="sun-theme-light" width="30" height="30">
+                </li>
+            </ul>
+        </div>
+    </aside>
 
     <div class="searchBox" scream>
         <div id="modalSearch" class="modalSearch">
@@ -113,174 +147,176 @@
         </div>
     </div>
 
+
     <div id="main" class="main">
         <!-- Divs do cambio COIN/BRL -->
         <div class="container-Cotacoes">
+            <div class="items">
+                <div class="small-extern-box">
+                    <div class="small-box">
+                        <div class="cardBov">
+                            <span id="span-Name1" class="span-CardBov"> </span>
+                        </div>
 
-            <div class="small-extern-box">
-                <div class="small-box">
-                    <div class="cardBov">
-                        <span id="span-Name1" class="span-CardBov"> </span>
+                        <div class="cardBovPorcentagem">
+                            <div class="color-value" id="color-valueUSD">
+                                <span id="span-Value" class="span-PorcentagemAcao"> </span>
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="cardBovPorcentagem">
-                        <div class="color-value" id="color-valueUSD">
-                            <span id="span-Value" class="span-PorcentagemAcao"> </span>
+                    <div class="box-Coin">
+                        <div class="dados-Coin">
+                            <!-- Dados das moedas -->
+                            <span id="span-Moeda1" class="span-NomeCoin"> </span>
                         </div>
                     </div>
                 </div>
 
-                <div class="box-Coin">
-                    <div class="dados-Coin">
-                        <!-- Dados das moedas -->
-                        <span id="span-Moeda1" class="span-NomeCoin"> </span>
-                    </div>
-                </div>
-            </div>
+                <div class="small-extern-box">
+                    <div class="small-box">
+                        <div class="cardBov">
+                            <span id="span-Name2" class="span-CardBov"> </span>
+                        </div>
 
-            <div class="small-extern-box">
-                <div class="small-box">
-                    <div class="cardBov">
-                        <span id="span-Name2" class="span-CardBov"> </span>
+                        <div id="cardPorcentagem" class="cardBovPorcentagem">
+                            <div class="color-value" id="color-valueEUR">
+                                <span id="span-Value2" class="span-PorcentagemAcao"> </span>
+                            </div>
+                        </div>
                     </div>
 
-                    <div id="cardPorcentagem" class="cardBovPorcentagem">
-                        <div class="color-value" id="color-valueEUR">
-                            <span id="span-Value2" class="span-PorcentagemAcao"> </span>
+                    <div class="box-Coin">
+                        <div class="dados-Coin">
+                            <!-- Dados das moedas -->
+                            <span id="span-Moeda2" class="span-NomeCoin"> </span>
                         </div>
                     </div>
                 </div>
 
-                <div class="box-Coin">
-                    <div class="dados-Coin">
-                        <!-- Dados das moedas -->
-                        <span id="span-Moeda2" class="span-NomeCoin"> </span>
-                    </div>
-                </div>
-            </div>
+                <div class="small-extern-box">
+                    <div class="small-box">
+                        <div class="cardBov">
+                            <span id="span-Name3" class="span-CardBov"> </span>
+                        </div>
 
-            <div class="small-extern-box">
-                <div class="small-box">
-                    <div class="cardBov">
-                        <span id="span-Name3" class="span-CardBov"> </span>
+                        <div id="cardPorcentagem" class="cardBovPorcentagem">
+                            <div class="color-value" id="color-valueCAD">
+                                <span id="span-Value3" class="span-PorcentagemAcao"> </span>
+                            </div>
+                        </div>
                     </div>
 
-                    <div id="cardPorcentagem" class="cardBovPorcentagem">
-                        <div class="color-value" id="color-valueCAD">
-                            <span id="span-Value3" class="span-PorcentagemAcao"> </span>
+                    <div class="box-Coin">
+                        <div class="dados-Coin">
+                            <!-- Dados das moedas -->
+                            <span id="span-Moeda3" class="span-NomeCoin"> </span>
                         </div>
                     </div>
                 </div>
 
-                <div class="box-Coin">
-                    <div class="dados-Coin">
-                        <!-- Dados das moedas -->
-                        <span id="span-Moeda3" class="span-NomeCoin"> </span>
-                    </div>
-                </div>
-            </div>
+                <div class="small-extern-box">
+                    <div class="small-box">
+                        <div class="cardBov">
+                            <span id="span-Name4" class="span-CardBov"> </span>
+                        </div>
 
-            <div class="small-extern-box">
-                <div class="small-box">
-                    <div class="cardBov">
-                        <span id="span-Name4" class="span-CardBov"> </span>
+                        <div id="cardPorcentagem" class="cardBovPorcentagem">
+                            <div class="color-value" id="color-valueARS">
+                                <span id="span-Value4" class="span-PorcentagemAcao"> </span>
+                            </div>
+                        </div>
                     </div>
 
-                    <div id="cardPorcentagem" class="cardBovPorcentagem">
-                        <div class="color-value" id="color-valueARS">
-                            <span id="span-Value4" class="span-PorcentagemAcao"> </span>
+                    <div class="box-Coin">
+                        <div class="dados-Coin">
+                            <!-- Dados das moedas -->
+                            <span id="span-Moeda4" class="span-NomeCoin"> </span>
                         </div>
                     </div>
                 </div>
 
-                <div class="box-Coin">
-                    <div class="dados-Coin">
-                        <!-- Dados das moedas -->
-                        <span id="span-Moeda4" class="span-NomeCoin"> </span>
-                    </div>
-                </div>
-            </div>
+                <div class="small-extern-box">
+                    <div class="small-box">
+                        <div class="cardBov">
+                            <span id="span-Name5" class="span-CardBov"> </span>
+                        </div>
 
-            <div class="small-extern-box">
-                <div class="small-box">
-                    <div class="cardBov">
-                        <span id="span-Name5" class="span-CardBov"> </span>
+                        <div id="cardPorcentagem" class="cardBovPorcentagem">
+                            <div class="color-value" id="color-valueCLP">
+                                <span id="span-Value5" class="span-PorcentagemAcao"> </span>
+                            </div>
+                        </div>
                     </div>
 
-                    <div id="cardPorcentagem" class="cardBovPorcentagem">
-                        <div class="color-value" id="color-valueCLP">
-                            <span id="span-Value5" class="span-PorcentagemAcao"> </span>
+                    <div class="box-Coin">
+                        <div class="dados-Coin">
+                            <!-- Dados das moedas -->
+                            <span id="span-Moeda5" class="span-NomeCoin"> </span>
                         </div>
                     </div>
                 </div>
 
-                <div class="box-Coin">
-                    <div class="dados-Coin">
-                        <!-- Dados das moedas -->
-                        <span id="span-Moeda5" class="span-NomeCoin"> </span>
-                    </div>
-                </div>
-            </div>
+                <div class="small-extern-box">
+                    <div class="small-box">
+                        <div class="cardBov">
+                            <span id="span-Name6" class="span-CardBov"> </span>
+                        </div>
 
-            <div class="small-extern-box">
-                <div class="small-box">
-                    <div class="cardBov">
-                        <span id="span-Name6" class="span-CardBov"> </span>
+                        <div id="cardPorcentagem" class="cardBovPorcentagem">
+                            <div class="color-value" id="color-valueCNY">
+                                <span id="span-Value6" class="span-PorcentagemAcao"> </span>
+                            </div>
+                        </div>
                     </div>
 
-                    <div id="cardPorcentagem" class="cardBovPorcentagem">
-                        <div class="color-value" id="color-valueCNY">
-                            <span id="span-Value6" class="span-PorcentagemAcao"> </span>
+                    <div class="box-Coin">
+                        <div class="dados-Coin">
+                            <!-- Dados das moedas -->
+                            <span id="span-Moeda6" class="span-NomeCoin"> </span>
                         </div>
                     </div>
                 </div>
 
-                <div class="box-Coin">
-                    <div class="dados-Coin">
-                        <!-- Dados das moedas -->
-                        <span id="span-Moeda6" class="span-NomeCoin"> </span>
-                    </div>
-                </div>
-            </div>
+                <div class="small-extern-box">
+                    <div class="small-box">
+                        <div class="cardBov">
+                            <span id="span-Name7" class="span-CardBov"> </span>
+                        </div>
 
-            <div class="small-extern-box">
-                <div class="small-box">
-                    <div class="cardBov">
-                        <span id="span-Name7" class="span-CardBov"> </span>
+                        <div id="cardPorcentagem" class="cardBovPorcentagem">
+                            <div class="color-value" id="color-valueGBP">
+                                <span id="span-Value7" class="span-PorcentagemAcao"> </span>
+                            </div>
+                        </div>
                     </div>
 
-                    <div id="cardPorcentagem" class="cardBovPorcentagem">
-                        <div class="color-value" id="color-valueGBP">
-                            <span id="span-Value7" class="span-PorcentagemAcao"> </span>
+                    <div class="box-Coin">
+                        <div class="dados-Coin">
+                            <!-- Dados das moedas -->
+                            <span id="span-Moeda7" class="span-NomeCoin"> </span>
                         </div>
                     </div>
                 </div>
 
-                <div class="box-Coin">
-                    <div class="dados-Coin">
-                        <!-- Dados das moedas -->
-                        <span id="span-Moeda7" class="span-NomeCoin"> </span>
-                    </div>
-                </div>
-            </div>
+                <div class="small-extern-box">
+                    <div class="small-box">
+                        <div class="cardBov">
+                            <span id="span-Name8" class="span-CardBov"> </span>
+                        </div>
 
-            <div class="small-extern-box">
-                <div class="small-box">
-                    <div class="cardBov">
-                        <span id="span-Name8" class="span-CardBov"> </span>
-                    </div>
-
-                    <div id="cardPorcentagem" class="cardBovPorcentagem">
-                        <div class="color-value" id="color-valueJPY">
-                            <span id="span-Value8" class="span-PorcentagemAcao"> </span>
+                        <div id="cardPorcentagem" class="cardBovPorcentagem">
+                            <div class="color-value" id="color-valueJPY">
+                                <span id="span-Value8" class="span-PorcentagemAcao"> </span>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="box-Coin">
-                    <div class="dados-Coin">
-                        <!-- Dados das moedas -->
-                        <span id="span-Moeda8" class="span-NomeCoin"> </span>
+                    <div class="box-Coin">
+                        <div class="dados-Coin">
+                            <!-- Dados das moedas -->
+                            <span id="span-Moeda8" class="span-NomeCoin"> </span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -383,6 +419,7 @@
     </footer>
 
     <script src="config/config.js"></script>
+    <script src="config/config-Cookie.js"></script>
     <script src="config/api-Cambio.js"></script>
 </body>
 

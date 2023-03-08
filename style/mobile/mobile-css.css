@@ -52,7 +52,7 @@
         height: auto;
         display: grid;
         min-width: 920px;
-        padding: 15vh 0 0 0;
+        padding: 2.3cm 0 0 0;
         grid-template-rows: 112px 230px;
         grid-template-columns: 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5%;
     }
@@ -102,8 +102,11 @@
         background-image: var(--img-buttonbck);
     }
 
-    div.container-Cotacoes {
-        z-index: -1;
+    input#input-search-mobile {
+        display: none;
+    }
+
+    div.items {
         height: auto;
         display: flex;
         position: absolute;
@@ -344,4 +347,397 @@
         font-size: 13px;
         color: var(--color-footerDireitos);
     }
+}
+
+@media screen and (max-width:898px) {
+    body {
+        width: 100vw;
+        height: 100vh;
+    }
+
+    nav {
+        z-index: 1;
+        width: 100vw;
+        height: 65px;
+        display: flex;
+        min-width: 300px;
+        position: absolute;
+        background-color: var(--color-nav-Dark);
+        box-shadow: 0px 2px 2px var(--color-box-shadow);
+    }
+
+    a.title {
+        font-size: 1.6rem;
+    }
+
+    section.navBar {
+        display: none;
+    }
+
+    div.search-box {
+        display: none;
+    }
+
+    button.btn-theme {
+        display: none;
+    }
+
+    button.menu-toggle {
+        width: 40px;
+        height: 40px;
+        border: none;
+        color: var(--color-nav-txt);
+        display: block;
+        font-size: 20px;
+        margin: 12px 8px;
+        border-radius: 10px;
+        background-color: transparent;
+    }
+
+    button.btn-search-mobile {
+        width: 40px;
+        height: 40px;
+        border: none;
+        display: block;
+        margin: 14px 12px 14px 0;
+        background-size: 40px 40px;
+        background-color: var(--color-nav-Dark);
+        background-image: url(/img/loupe-white.png);
+    }
+
+    input#input-search-mobile {
+        width: 40px;
+        height: 30px;
+        color: #fff;
+        font-size: 18px;
+        margin: 15px 12px;
+        text-align: center;
+        border-radius: 10px;
+        border: 1px solid #ccc;
+        background-color: var(--color-body-bck);
+    }
+
+    /* Main */
+
+    div.main {
+        gap: 0.7cm 0;
+        width: 100vw;
+        height: auto;
+        display: grid;
+        min-width: 300px;
+        padding: 2.3cm 0 0 0;
+        grid-template-rows: 112px 230px 230px;
+        grid-template-columns: 33.3% 33.3% 33.3%;
+    }
+
+    div.container-Cotacoes {
+        width: 100vw;
+    }
+
+    div.small-extern-box {
+        width: 120px;
+        height: 110px;
+        flex-shrink: 0;
+    }
+
+    div.items {
+        z-index: 1;
+        width: 100%;
+        display: flex;
+        height: 130px;
+        overflow-x: auto;
+    }
+
+    div.box-Acoes-Destaque {
+        grid-row-start: 2;
+        grid-column-end: 4;
+        grid-column-start: 1;
+    }
+
+    div.box-Acoes-Destaque-Negativos {
+        grid-row-start: 3;
+        grid-column-end: 4;
+        grid-column-start: 1;
+    }
+
+    div.box-Acoes-Destaque,
+    div.box-Acoes-Destaque-Negativos {
+        width: 350px;
+        height: auto;
+        place-self: center;
+        border-radius: 10px;
+        background: var(--color-exernBox-bck);
+        border: 1px solid var(--color-border-exern);
+        box-shadow: 1px 3px 8px 1px var(--color-box-shadow);
+    }
+
+    div.title-Cotacoes {
+        width: 100%;
+        font-size: 25px;
+        padding-top: 5px;
+        font-weight: bold;
+        text-align: center;
+        padding-left: 10px;
+        padding-bottom: 8px;
+        color: var(--color-nav-txt);
+    }
+
+    div.intern-Card-Cotacoes {
+        display: flex;
+        padding: 5px 0 7px 10px;
+    }
+
+    span.span-Card-Cotacoes {
+        width: 50px;
+        height: 25px;
+        font-weight: bold;
+        border-radius: 5px;
+        margin-right: 15px;
+        text-align: center;
+        background-color: var(--color-nav-txt);
+        color: var(--color-cardCotacoes);
+    }
+
+    span.span-Card-Porcentagem {
+        width: 70px;
+        height: 25px;
+        padding-top: 5px;
+        font-weight: bold;
+        margin-bottom: 5px;
+        border-radius: 5px;
+        margin-right: 15px;
+        text-align: center;
+        color: var(--color-nav-txt);
+        background-color: #0fef83;
+    }
+
+    span.span-Card-Porcentagem-Dois {
+        width: 70px;
+        height: 25px;
+        padding-top: 5px;
+        font-weight: bold;
+        margin-bottom: 5px;
+        border-radius: 5px;
+        margin-right: 15px;
+        text-align: center;
+        color: var(--color-nav-txt);
+        background-color: #d30d48;
+    }
+
+    /* Fim Main */
+
+    /* MODAL INICIO */
+
+    div.searchBox {
+        z-index: 2;
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        position: fixed;
+        align-items: center;
+        justify-content: center;
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+    }
+
+    div.modalSearch {
+        z-index: 1;
+        width: 320px;
+        height: 425px;
+        min-width: 350px;
+        border-radius: 10px;
+        background-color: var(--color-exernBox-bck);
+    }
+
+    div.button {
+        width: 100%;
+        height: auto;
+        display: block;
+        text-align: end;
+    }
+
+    button.exitButton {
+        width: 35px;
+        height: 35px;
+        border: none;
+        margin: 5px 5px;
+        background-size: 35px 35px;
+        background-color: transparent;
+        background-image: url(/img/button-exit.png);
+    }
+
+    div.titleCoin {
+        width: 100%;
+        height: auto;
+    }
+
+    div.container-coin {
+        width: 100%;
+        height: auto;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    div.dados {
+        width: 100%;
+        height: auto;
+    }
+
+    #descriptionCoin {
+        color: #fff;
+        font-weight: bold;
+    }
+
+    div.boxCoinDados {
+        margin: 0;
+        width: 290px;
+        font-weight: bold;
+        border-radius: 10px;
+        color: var(--color-txt-coinSearch);
+        background-color: var(--color-dadosCoin-bck);
+    }
+
+    span#span-coinSearch {
+        color: #fff;
+        font-size: 1.5rem;
+        font-weight: bold;
+    }
+
+    h4.names {
+        width: 160px;
+        font-size: 17px;
+        margin: 0 10px 0 0;
+        color: var(--color-nav-txt);
+    }
+
+    div.span-style {
+        width: 90px;
+        height: auto;
+        font-size: 15px;
+        border-radius: 2px;
+        background-color: #fff;
+        box-shadow: 1px 2px 3px var(--color-box-shadow);
+    }
+
+    /* MODAL FIM */
+
+    /* Menu mobile */
+
+    aside.menu-mobile {
+        z-index: 3;
+        width: 100vw;
+        height: 100vh;
+        margin: 8px 8px;
+        position: fixed;
+        backdrop-filter: blur(4.5px);
+        -webkit-backdrop-filter: blur(4.5px);
+    }
+
+    div.intern-box-aside {
+        margin: 0;
+        z-index: 2;
+        width: 200px;
+        height: 200px;
+        position: absolute;
+        text-align: center;
+        border-radius: 10px;
+        backdrop-filter: blur(2.3px);
+        -webkit-backdrop-filter: blur(2.3px);
+        background-color: rgba(82, 82, 82, 0.753);
+        box-shadow: 1px 3px 10px 0px var(--color-box-shadow);
+    }
+
+    ul.ul-menu-mobile {
+        padding: 0;
+        width: 100%;
+        height: 60%;
+        margin: 35px auto;
+    }
+
+    ul>li, a {
+        color: #fff;
+        font-size: 20px;
+        list-style: none;
+        font-weight: bold;
+        margin: 10px auto;
+        text-decoration: none;
+    }
+
+    li.charge-theme {
+        padding: 0;
+        width: 100%;
+        height: 50px;
+        display: flex;
+        margin: 30px 0 0 0;
+        align-items: center;
+        justify-content: center;
+    }
+
+    input.range-change-theme {
+        height: 2em;
+        width: 3.5em;
+        border: none;
+        margin: 0 3px;
+        appearance: none;
+        border-radius: 60px;
+        display: inline-block;
+        background-color: #fff;
+        -webkit-appearance: none;
+    }
+
+    /* para o Fire Fox */
+    .range-change-theme::-moz-range-thumb {
+        width: 2em;
+        border: none;
+        height: 3.5em;
+        border-radius: 50%;
+    }
+
+    /* para browsers da MS */
+    .range-change-theme::-ms-range-thumb {
+        width: 2em;
+        border: none;
+        height: 3.5em;
+        border-radius: 50%;
+    }
+
+    .range-change-theme::-webkit-slider-thumb {
+        width: 30px;
+        height: 30px;
+        border: none;
+        border-radius: 50%;
+        background: #23242f;
+        -webkit-appearance: none;
+        /* remove a aparencia padão */
+    }
+
+    /* Fim Menu mobile*/
+
+    /* Footer */
+
+    footer.footerApp {
+        bottom: 0;
+        width: 100vw;
+        height: 100px;
+        min-width: 300px;
+        margin-top: 30px;
+        text-align: center;
+        position: relative;
+        background-color: var(--color-nav-Dark);
+    }
+
+    a.title-Footer {
+        font-size: 33px;
+        font-weight: bold;
+        text-decoration: none;
+        color: var(--color-nav-txt);
+    }
+
+    p.footerDireitos {
+        font-size: 13px;
+        color: var(--color-footerDireitos);
+    }
+
 }

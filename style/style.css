@@ -63,7 +63,7 @@ section.navBar {
 
 a.title {
     padding: 0;
-    font-size: 30px;
+    font-size: 2rem;
     margin-left: auto;
     margin-right: auto;
     font-family: Andale Mono, monospace;
@@ -103,6 +103,10 @@ button.btn-theme {
     background-image: var(--img-buttonbck);
 }
 
+button.menu-toggle {
+    display: none;
+}
+
 #search-box, .search-box {
     display: flex;
     margin-top: 4px;
@@ -123,6 +127,10 @@ button.btn-theme {
     transition: 0.7s;
 }
 
+button.btn-search-mobile {
+    display: none;
+}
+
 #img1 {
     width: 50px;
     height: 50px;
@@ -130,7 +138,7 @@ button.btn-theme {
     cursor: pointer;
     background-size: 50px 50px;
     background-color: var(--color-nav-Dark);
-    background-image: url(/img/loupe-blue.png);
+    background-image: url(../img/loupe-blue.png);
 }
 
 #img2 {
@@ -140,7 +148,11 @@ button.btn-theme {
     cursor: pointer;
     background-size: 50px 50px;
     background-color: var(--color-nav-Dark);
-    background-image: url(/img/loupe-white.png);
+    background-image: url(../img/loupe-white.png);
+}
+
+input#input-search-mobile {
+    display: none;
 }
 
 .search-btn {
@@ -173,8 +185,7 @@ button.btn-theme {
     color: rgba(255, 255, 255, 0.356);
 }
 
-div.container-Cotacoes {
-    z-index: -1;
+div.items {
     height: auto;
     display: flex;
     position: absolute;
@@ -460,4 +471,9 @@ p.footerDireitos {
     color: var(--color-footerDireitos);
 }
 
-/*Mobile MOD*/
+/* Fim Footer */
+
+aside.menu-mobile {
+    margin: 0;
+    display: none;
+}
