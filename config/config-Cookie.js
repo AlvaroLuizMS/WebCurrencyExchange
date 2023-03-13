@@ -13,14 +13,14 @@ function newCookieUserTheme() {
         //Verifica o tema selecionado no modo pc
         let valueInputHide = document.querySelector('.input-hide')
         if (valueInputHide.value == 0) {
-            document.cookie = `data-theme=t-dark; path=/`;
+            document.cookie = `data-theme=t-dark; path=../`;
         } else if (valueInputHide.value == 1) {
-            document.cookie = `data-theme=t-light; path=/`;
+            document.cookie = `data-theme=t-light; path=../`;
         }
     })
 
     //aplica como tema do site o tema que o usuario escolheu e esta armazenado em um cookie
-    let newCookie = document.cookie.split(';')[0].split('=')[1]
+    let newCookie = document.cookie.split(';')[0].split("=")[1]
     const by = document.querySelector('body').attributes['data-theme'].value = newCookie
 
     /* 
