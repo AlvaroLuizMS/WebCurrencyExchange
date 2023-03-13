@@ -13,9 +13,9 @@ function newCookieUserTheme() {
         //Verifica o tema selecionado no modo pc
         let valueInputHide = document.querySelector('.input-hide')
         if (valueInputHide.value == 0) {
-            document.cookie = `data-theme=t-dark; path=../`;
+            document.cookie = `data-theme=t-dark; path=/`;
         } else if (valueInputHide.value == 1) {
-            document.cookie = `data-theme=t-light; path=../`;
+            document.cookie = `data-theme=t-light; path=/`;
         }
     })
 

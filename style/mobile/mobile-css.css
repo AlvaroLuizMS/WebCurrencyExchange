@@ -12,7 +12,7 @@
         --color-nav-Dark: rgb(87, 87, 87);
         --color-cardBov: rgb(104, 104, 104);
         --color-cardCotacoes: rgb(87, 87, 87);
-        --img-buttonbck: url(/img/lua-theme.png);
+        --img-buttonbck: url(/img/sol-theme.png);
         --color-dadosCoin-bck: rgb(78, 77, 74);
         --color-border-exern: #6b6b6b36;
         --color-box-shadow: rgba(8, 8, 8, 0.658);
@@ -35,7 +35,7 @@
         --color-exernBox-bck: #23242f;
         --color-dadosCoin-bck: rgb(82, 82, 82);
         --img-buttonbck: url(/img/sol-theme.png);
-        --img-search: url(../img/lupa-de-pesquisa.png);
+        --img-search: url(/img/loupe-white.png);
         --color-box-shadow: #1a1a1aa6;
         --color-border-exern: #1f212c7a;
         --color-footerDireitos: rgba(255, 255, 255, 0.315);
